@@ -136,8 +136,7 @@ p {
   text-transform: capitalize;
 }
 
-.intro h1:before {
-  content: "Nick Purifico";
+.intro .dj-name {
   font-family: "refrigerator-deluxe", sans-serif;
   font-style: normal;
   text-transform: uppercase;
@@ -224,24 +223,6 @@ p {
 
 .main-content a:hover,.main-content a:focus {
   color: #e5452c;
-}
-
-.design-name {
-  font-style: italic;
-  background: #faf3e6;
-  padding-right: 0.25em;
-}
-
-.design-name:after {
-  float: left;
-  width: 0;
-  white-space: nowrap;
-  color: #3f3d3a;
-  content: ".....................................................................................................................";
-}
-
-h3.archives {
-  display: none;
 }
 
 .bottom {
@@ -366,7 +347,7 @@ footer {
     margin: 0 auto;
   }
 
-  .intro h1:before {
+  .intro .dj-name {
     font-size: 0.25em;
     letter-spacing: 0.175rem;
     font-weight: 700;
@@ -439,7 +420,7 @@ footer {
     font-size: 5.65em;
   }
 
-  .intro h1:before {
+  .intro .dj-name {
     font-size: 2rem;
     letter-spacing: 0.175rem;
     font-weight: 700;
@@ -505,7 +486,7 @@ footer {
     font-size: 7em;
   }
 
-  .intro h1:before {
+  .intro .dj-name {
     background: url('/img/img-sprite.png') no-repeat center 0.3em;
     background-size: 56rem;
     font-size: 2.75rem;
@@ -538,7 +519,7 @@ footer {
     line-height: 1.4;
   }
 
-  .intro h1:before {
+  .intro .dj-name {
     background: url('/img/img-sprite.png') no-repeat center 0.5em;
     background-size: 58rem;
     margin-bottom: 0;
