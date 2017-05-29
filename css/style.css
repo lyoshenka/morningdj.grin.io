@@ -1,27 +1,27 @@
 @font-face {
   font-family: "refrigerator-deluxe";
-  src: url("/refrigerator-deluxe.woff2");
+  src: url("/fonts/refrigerator-deluxe.woff2");
 }
 
 @font-face {
   font-family: "ltc-bodoni-175";
-  src: url("/ltc-bodoni-175-regular.woff2");
+  src: url("/fonts/ltc-bodoni-175-regular.woff2");
 }
 
 @font-face {
   font-family: "ltc-bodoni-175";
-  src: url("/ltc-bodoni-175-italic.woff2");
+  src: url("/fonts/ltc-bodoni-175-italic.woff2");
   font-style: italic;
 }
 
 @font-face {
   font-family: "grecian-light-face";
-  src: url("/grecian-light-face.woff2");
+  src: url("/fonts/grecian-light-face.woff2");
 }
 
 @font-face {
   font-family: "french-clarendon-ornamented";
-  src: url("/french-clarendon-ornamented.woff2");
+  src: url("/fonts/french-clarendon-ornamented.woff2");
 }
 
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,ul,li {
@@ -64,7 +64,7 @@ body:before {
   border-left: 45px solid #faf3e6;
   border-right: 45px solid #faf3e6;
   border-top: 45px solid transparent;
-  background: #f7644d url('img-halftone.png') repeat;
+  background: #f7644d url('/img/img-halftone.png') repeat;
   margin: 0 auto -45px;
 }
 
@@ -72,7 +72,7 @@ body:after {
   border-left: 7em solid #faf3e6;
   border-right: 7em solid #faf3e6;
   border-bottom: 10em solid transparent;
-  background: #ffb14d url('img-halftone.png') repeat;
+  background: #ffb14d url('/img/img-halftone.png') repeat;
   margin: -10em auto 0;
 }
 
@@ -87,7 +87,7 @@ body:after {
 .page-wrapper:before {
   content: "";
   height: 20px;
-  background: url('img-lg-horiz-border.png') repeat-x 0 -2px;
+  background: url('/img/img-lg-horiz-border.png') repeat-x 0 -2px;
   background-size: 40em;
   display: block;
 }
@@ -145,7 +145,7 @@ p {
   font-size: 1.12rem;
   letter-spacing: 0.1rem;
   font-weight: 700;
-  background: url('img-sprite.png') no-repeat center 0.25em;
+  background: url('/img/img-sprite.png') no-repeat center 0.25em;
   background-size: 25rem;
   margin-bottom: 1.3em;
 }
@@ -159,7 +159,7 @@ p {
   margin-bottom: 0em;
   letter-spacing: 0.05rem;
   line-height: 1.275em;
-  background: url('img-bottle.png') no-repeat center 0.75em;
+  background: url('/img/img-bottle.png') no-repeat center 0.75em;
   background-size: 1.45em;
 }
 
@@ -171,7 +171,7 @@ p {
   letter-spacing: 0.05em;
   padding: 0.5em 0;
   margin: 0.35em auto 0.75em;
-  background: url('img-lg-horiz-border.png') repeat-x top right, url('img-lg-horiz-border.png') repeat-x bottom left;
+  background: url('/img/img-lg-horiz-border.png') repeat-x top right, url('/img/img-lg-horiz-border.png') repeat-x bottom left;
   background-size: 15em;
   line-height: 1;
 }
@@ -251,7 +251,7 @@ h3.archives {
 
 .bottom ul {
   list-style-type: none;
-  background: url('img-lg-horiz-border.png') repeat-x top right, url('img-lg-horiz-border.png') repeat-x bottom left;
+  background: url('/img/img-lg-horiz-border.png') repeat-x top right, url('/img/img-lg-horiz-border.png') repeat-x bottom left;
   background-size: 36em;
   padding: 1.25em 0;
 }
@@ -290,7 +290,7 @@ h3.archives {
 
 .bottom .next a {
   right: 0;
-  background: url('img-sprite.png') no-repeat bottom right;
+  background: url('/img/img-sprite.png') no-repeat bottom right;
   background-size: 20em;
 }
 
@@ -302,12 +302,12 @@ footer:after {
   width: 100%;
   height: 15em;
   margin: 0 auto -13.5em;
-  background: url('img-lookup.png') no-repeat center center;
+  background: url('/img/img-lookup.png') no-repeat center center;
   background-size: 10em;
 }
 
 footer {
-  background: url('img-lg-horiz-border.png') repeat-x bottom left;
+  background: url('/img/img-lg-horiz-border.png') repeat-x bottom left;
   background-size: 40em;
   text-align: center;
   font-family: "refrigerator-deluxe", sans-serif;
@@ -345,7 +345,7 @@ footer {
 
   .page-wrapper {
     width: 99%;
-    background: url('img-lg-vert-border.png') repeat-y top left, url('img-lg-vert-border.png') repeat-y right 100px;
+    background: url('/img/img-lg-vert-border.png') repeat-y top left, url('/img/img-lg-vert-border.png') repeat-y right 100px;
     background-size: 0.75em;
     margin: 0.5em auto;
     padding: 0 2px;
@@ -370,7 +370,7 @@ footer {
     font-size: 0.25em;
     letter-spacing: 0.175rem;
     font-weight: 700;
-    background: url('img-sprite.png') no-repeat center 0.2em;
+    background: url('/img/img-sprite.png') no-repeat center 0.2em;
     background-size: 38rem;
     margin-bottom: 1.2em;
   }
@@ -381,7 +381,7 @@ footer {
     margin-top: 0.85em;
     margin-bottom: 0em;
     line-height: 1.275em;
-    background: url('img-bottle.png') no-repeat center top;
+    background: url('/img/img-bottle.png') no-repeat center top;
     background-size: 1.65em;
   }
 
@@ -401,7 +401,7 @@ footer {
   }
 
   .bottom .next a {
-    background: url('img-sprite.png') no-repeat bottom right;
+    background: url('/img/img-sprite.png') no-repeat bottom right;
     background-size: 35em;
   }
 
@@ -410,7 +410,7 @@ footer {
   }
 
   footer:after {
-    background: url('img-lookup.png') no-repeat center bottom;
+    background: url('/img/img-lookup.png') no-repeat center bottom;
     background-size: 15em;
   }
 }
@@ -443,7 +443,7 @@ footer {
     font-size: 2rem;
     letter-spacing: 0.175rem;
     font-weight: 700;
-    background: url('img-sprite.png') no-repeat center 0.25em;
+    background: url('/img/img-sprite.png') no-repeat center 0.25em;
     background-size: 42rem;
     margin-bottom: 1em;
   }
@@ -506,7 +506,7 @@ footer {
   }
 
   .intro h1:before {
-    background: url('img-sprite.png') no-repeat center 0.3em;
+    background: url('/img/img-sprite.png') no-repeat center 0.3em;
     background-size: 56rem;
     font-size: 2.75rem;
   }
@@ -539,7 +539,7 @@ footer {
   }
 
   .intro h1:before {
-    background: url('img-sprite.png') no-repeat center 0.5em;
+    background: url('/img/img-sprite.png') no-repeat center 0.5em;
     background-size: 58rem;
     margin-bottom: 0;
   }

@@ -1,4 +1,4 @@
-/vendor
-/client_secret.json
-/credentials.json
+/php/vendor
+/php/client_secret.json
+/php/credentials.json
 /_site
