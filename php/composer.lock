@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e6e79e410cd98a8d86f36f772fe3690",
+    "content-hash": "d2864a53cee8b5a9ad5438bdf147ef93",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -370,6 +370,42 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "lyoshenka/shell",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lyoshenka/php-shell.git",
+                "reference": "3eb8ba5ecfa1a3681c26ba1ece909164562efb5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lyoshenka/php-shell/zipball/3eb8ba5ecfa1a3681c26ba1ece909164562efb5d",
+                "reference": "3eb8ba5ecfa1a3681c26ba1ece909164562efb5d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lyoshenka\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Grintsvayg",
+                    "email": "alex@grin.io"
+                }
+            ],
+            "description": "A better way to call shell commands",
+            "time": "2017-01-27T22:37:55+00:00"
         },
         {
             "name": "monolog/monolog",

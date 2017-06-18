@@ -13,6 +13,10 @@ if (php_sapi_name() != 'cli')
   exit(1);
 }
 
+function indent($text, $prefix) {
+  return implode("\n", array_map(function($line) use($prefix) {return $line ? ($prefix.$line) : '';}, explode("\n", $text)));
+}
+
 /**
  * Returns an authorized API client.
  * @return Google_Client the authorized client object
@@ -101,7 +105,11 @@ $mostRecentExport = null;
 $output= '';
 
 // Search for export in messages
-$messageSearch = $service->users_messages->listUsersMessages($user, ['q' => 'subject:"Morning DJ"']);
+$pageToken = null;
+do {
+  $messageSearch = $service->users_messages->listUsersMessages($user, ['q' => 'subject:"Morning DJ"', 'pageToken' => $pageToken]);
+  $pageToken = $messageSearch->getNextPageToken();
+
 foreach ($messageSearch->getMessages() as $messageData)
 {
   $message = $service->users_messages->get($user, $messageData->getId());
@@ -118,7 +126,12 @@ foreach ($messageSearch->getMessages() as $messageData)
       {
         $href = $link->getAttribute('href');
         if (stripos($href, 'youtu') === false) continue;
-        $dayOutput .= '<li><a href="' . $href . '">' . fixDangling(strip_tags(get_inner_html($link))) . "</a></li>\n";
+        $linkText = fixDangling(strip_tags(get_inner_html($link)));
+        if (count(explode(' ', $linkText)) < 2) {
+          list($code, $out, $err) = \lyoshenka\Shell::exec("youtube-dl --get-filename -o '%(title)s' $href");
+          $linkText = fixDangling(htmlentities(trim($out)));
+        }
+        $dayOutput .= '<li><a href="' . $href . '">' . $linkText . "</a></li>\n";
       }
     }
   }
@@ -128,16 +141,65 @@ foreach ($messageSearch->getMessages() as $messageData)
   }
 }
 
-$content = $output;
+} while($pageToken);
 
-$css = <<<EOF
-body {
-  max-width: 800px;
-  margin: auto;
-}
+$template = <<<EOF
+<html>
+<head>
+  <link rel="stylesheet" href="/css/style.css"></link>
+</head>
+<body>
+  <div class="page-wrapper">
+    <section class="intro">
+      <header>
+        <h1>
+          <div class="dj-name">
+            Nick Purifico
+          </div>
+          Morning DJ
+        </h1>
+        <h2>The Cure for Your Mundane Morning</h2>
+      </header>
+    </section>
+
+    <div class="main-content">
+      <div class="wrapper">
+
+        <div class="playlist">
+          <h3>The Playlist</h3>
+          <div class="playlist-tracks">
+
+CONTENT_PLACEHOLDER
+
+          </div>
+        </div>
+
+        <div class="bottom">
+          <nav>
+            <ul>
+              <li class="next">
+                <a href="https://open.spotify.com/user/skawhore/playlist/1ik4ovIt7KXF9JQyPppACr">
+                  <span class="indicator">&rsaquo;</span>
+                </a>
+              </li>
+              <li class="viewall">
+                <a href="https://open.spotify.com/user/skawhore/playlist/1ik4ovIt7KXF9JQyPppACr">Hear it on Spotify</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      By <a href="https://grin.io">Grin</a>. Design from <a href="http://www.csszengarden.com/218/">CSS Zen Garden</a>.
+    </footer>
+  </div>
+</body>
+</html>
 EOF;
 
-$content = '<html><head><style>' . $css . '</style></head><body>' . "\n\n" . $content . '</body></html>';
+$content = str_replace('CONTENT_PLACEHOLDER', indent($output, '            '), $template);
 
 file_put_contents(__DIR__.'/index2.html', $content);
 
